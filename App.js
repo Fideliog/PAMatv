@@ -1,77 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import casual_dog from './assets/casual_dog.png';
-import Google from './assets/Google.png';
+import { NavigationContainer} from '@react-navigation/native'; 
+import { createStackNavigator } from '@react-navigation/stack'; 
+import PreLogin from './screens/PreLogin';
+import Login from './screens/Login';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Image source={casual_dog}/>
+const Stack = createStackNavigator(); 
 
-      <Text style={styles.title}>Ótimo dia!</Text>
-      <Text style={styles.subtitle}>Como deseja acessar?</Text>
-
-      <TouchableOpacity style={styles.button}>
-        <Image source={Google} style={{ width: 30, height: 30, marginRight: 10}}/>
-        <Text style={styles.buttonText}>Como deseja acessar?</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button2}>
-        <Text style={styles.buttonText2}>Outras opções</Text>
-      </TouchableOpacity>
-
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function App() { 
+return ( 
+<NavigationContainer> 
+  <Stack.Navigator initialRouteName="PreLogin"> 
+    <Stack.Screen name="PreLogin" component={PreLogin} options={{ headerShown: false }} /> 
+    <Stack.Screen name="Login" component={Login}/>
+  </Stack.Navigator> 
+</NavigationContainer>
+);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20
-  },
-  title: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    marginBottom: 10
-  },
-  subtitle: {
-    fontSize: 18,
-    marginBottom: 20
-  },
-  button: {
-    backgroundColor: '#43d38d',
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#43d38d',
-    flexDirection: 'row',
-    marginBottom: 15,
-    width:'15%'
-    },
-
-  button2: {
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#43d38d',
-    width:'15%'
-
-  },
-  buttonText: {
-    fontSize: 18,
-    color: '#fff',
-    textAlign: 'center'
-  },
-
-  buttonText2: {
-    fontSize: 18,
-    color: '#black',
-    textAlign: 'center'
-  },
-});
