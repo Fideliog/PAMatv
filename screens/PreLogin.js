@@ -12,8 +12,8 @@ export default function PreLogin({ navigation }) {
       <Text style={styles.subtitle}>Como deseja acessar?</Text>
 
       <TouchableOpacity  style={styles.button} onPress={() => navigation.navigate('Login')}>
-        <Image source={Google} style={{ width: 30, height: 30, marginRight: 10}}/>
-        <View style={{textAlign:'center', marginLeft: '18%'}}><Text style={styles.buttonText}> Acessar com email </Text></View>
+        <View style={styles.google}><Image source={Google} style={{ width: 30, height: 30}}/></View>
+        <Text style={styles.buttonText}> Acessar com email </Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button2}>
@@ -45,6 +45,14 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
 
+  google: {
+    backgroundColor: 'white', 
+    borderRadius: 8, 
+    borderWidth: 2, 
+    borderColor: 'white',
+  },
+  
+
   button: {
     backgroundColor: '#43d38d',
     paddingVertical: 14,
@@ -70,6 +78,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#fff',
     textAlign: 'center'
+    
   },
 
   buttonText2: {
