@@ -6,7 +6,7 @@ import Google from '../assets/Google.png';
 export default function PreLogin({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image source={casual_dog}/>
+      <Image style={styles.dog} resizeMode="contain" source={casual_dog}/>
 
       <Text style={styles.title}>Ótimo dia!</Text>
       <Text style={styles.subtitle}>Como deseja acessar?</Text>
@@ -51,18 +51,24 @@ const styles = StyleSheet.create({
     borderWidth: 2, 
     borderColor: 'white',
   },
-  
 
+  dog: {
+    width: '90%',
+  },
+  
   button: {
+    alignContent: 'center',
     backgroundColor: '#43d38d',
-    paddingVertical: 14,
-    paddingHorizontal: 32,
+    paddingVertical: '2%',
+    paddingHorizontal: '3%',
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#43d38d',
+    justifyContent: 'center',
+    alignItems:'center',
     flexDirection: 'row',
     marginBottom: 15,
-    width:'30%',
+    width:'90%',
     },
 
   button2: {
@@ -71,14 +77,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#43d38d',
-    width:'30%'
+    width:'90%'
   },
 
   buttonText: {
     fontSize: 15,
     color: '#fff',
     textAlign: 'center'
-    
   },
 
   buttonText2: {
